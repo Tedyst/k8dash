@@ -1,5 +1,5 @@
 # Stage 1 - the build react app
-FROM node:12.4.0-alpine as build-deps
+FROM sha256:bdc39b9892e1fd8d1b097cdadbb125862787856ebe79888de8cf6a127784422a as build-deps
 WORKDIR /usr/src/app
 COPY client/package.json client/package-lock.json ./
 RUN npm i
@@ -8,7 +8,7 @@ COPY client/ ./
 RUN npm run build
 
 # Stage 2 - the production environment
-FROM node:12.4.0-alpine
+FROM sha256:bdc39b9892e1fd8d1b097cdadbb125862787856ebe79888de8cf6a127784422a
 
 RUN apk add --no-cache tini
 ENV NODE_ENV production

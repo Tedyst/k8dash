@@ -2,6 +2,7 @@
 FROM node:alpine3.10 as build-deps
 WORKDIR /usr/src/app
 COPY client/package.json client/package-lock.json ./
+RUN apk add python make g++
 RUN npm i
 
 COPY client/ ./

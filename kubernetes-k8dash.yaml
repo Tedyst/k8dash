@@ -14,19 +14,19 @@ spec:
         k8s-app: k8dash
     spec:
       containers:
-      - name: k8dash
-        image: herbrandson/k8dash:latest
-        ports:
-        - containerPort: 4654
-        livenessProbe:
-          httpGet:
-            scheme: HTTP
-            path: /
-            port: 4654
-          initialDelaySeconds: 30
-          timeoutSeconds: 30
+        - name: k8dash
+          image: Tedyst/k8dash:latest
+          ports:
+            - containerPort: 4654
+          livenessProbe:
+            httpGet:
+              scheme: HTTP
+              path: /
+              port: 4654
+            initialDelaySeconds: 30
+            timeoutSeconds: 30
       nodeSelector:
-        'beta.kubernetes.io/os': linux
+        "beta.kubernetes.io/os": linux
 
 ---
 kind: Service

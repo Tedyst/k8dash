@@ -102,7 +102,7 @@ kubectl create secret -n kube-system generic k8dash \
 --from-literal=id="$OIDC_ID" \
 --from-literal=secret="$OIDC_SECRET"
 
-kubectl apply -f https://raw.githubusercontent.com/herbrandson/k8dash/master/kubernetes-k8dash-oidc.yaml
+kubectl apply -f https://raw.githubusercontent.com/Tedyst/k8dash/master/kubernetes-k8dash-oidc.yaml
 
 ```
 
